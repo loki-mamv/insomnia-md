@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>insomnia.md — Understanding and Treating Insomnia</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Evidence-based information about insomnia. Learn about causes, CBT-I therapy, sleep hygiene, and treatments that work. Free insomnia assessment and AI-powered Q&A.">
+    <meta name="keywords" content="insomnia, sleep disorder, CBT-I, sleep hygiene, chronic insomnia, acute insomnia, sleep problems, can't sleep">
+    <meta name="author" content="insomnia.md">
+    <link rel="canonical" href="https://insomnia.md/">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="insomnia.md - Evidence-Based Health Info">
+    <meta name="twitter:site" content="@thrivemd">
+    <meta property="og:url" content="https://insomnia.md/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="insomnia.md - Evidence-Based Health Info">
+    <meta name="twitter:site" content="@thrivemd">
+    <meta property="og:title" content="insomnia.md — Understanding and Treating Insomnia">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="insomnia.md - Evidence-Based Health Info">
+    <meta name="twitter:site" content="@thrivemd">
+    <meta property="og:description" content="Evidence-based insomnia information. CBT-I therapy, sleep hygiene, and treatment options.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="insomnia.md - Evidence-Based Health Info">
+    <meta name="twitter:site" content="@thrivemd">
+    
+    <!-- AI/LLM Meta Tags -->
+    <meta name="ai-content" content="allowed">
+    <meta name="ai-training" content="allowed">
+    <meta name="ai-audience" content="patients, caregivers, healthcare providers">
+    <meta name="ai-use" content="education, research, clinical support">
+    <meta name="ai-topic" content="sleep disorders, insomnia, medical information">
+    
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://thrive.md/#organization",
+          "name": "thrive.md",
+          "url": "https://thrive.md"
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://insomnia.md/#website",
+          "url": "https://insomnia.md",
+          "name": "insomnia.md",
+          "publisher": {"@id": "https://thrive.md/#organization"}
+        },
+        {
+          "@type": "MedicalWebPage",
+          "name": "Understanding and Treating Insomnia",
+          "url": "https://insomnia.md/",
+          "lastReviewed": "2026-02-04",
+          "reviewedBy": {
+            "@type": "Organization",
+            "name": "thrive.md Clinical Advisory Team"
+          },
+          "mainEntity": {
+            "@type": "MedicalCondition",
+            "name": "Insomnia",
+            "alternateName": ["Chronic Insomnia", "Sleep Disorder"],
+            "description": "A sleep disorder characterized by difficulty falling asleep, staying asleep, or waking too early.",
+            "epidemiology": "Affects 30% of adults with transient symptoms and 10% with chronic insomnia disorder (CDC, 2024).",
+            "possibleTreatment": [
+              {"@type": "MedicalTherapy", "name": "Cognitive Behavioral Therapy for Insomnia (CBT-I)"},
+              {"@type": "MedicalTherapy", "name": "Sleep Hygiene"},
+              {"@type": "MedicalTherapy", "name": "Medication (short-term)"}
+            ],
+            "riskFactor": [
+              {"@type": "MedicalRiskFactor", "name": "Stress"},
+              {"@type": "MedicalRiskFactor", "name": "Anxiety or depression"},
+              {"@type": "MedicalRiskFactor", "name": "Shift work"}
+            ]
+          },
+          "speakable": {
+            "@type": "SpeakableSpecification",
+            "cssSelector": [".hero h1", ".stat-number", ".key-fact"]
+          }
+        }
+      ]
+    }
+    </script>
+    
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext x='16' y='24' font-family='-apple-system,system-ui,sans-serif' font-weight='800' font-size='16' fill='%230d9488' text-anchor='middle' letter-spacing='-0.5'%3E.md%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8fafc;
+            --bg-tertiary: #f1f5f9;
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --text-muted: #94a3b8;
+            --accent: #0d9488;
+            --accent-dark: #0f766e;
+            --accent-light: #ccfbf1;
+            --border: #e2e8f0;
+            --font-display: 'Source Serif 4', Georgia, serif;
+            --font-body: 'Inter', -apple-system, sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: var(--font-body);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .header-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+
+        .logo span { color: var(--accent); }
+
+        nav { display: flex; gap: 32px; }
+        nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        nav a:hover { color: var(--accent); }
+
+        .hero {
+            padding: 140px 24px 80px;
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .hero-eyebrow {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-size: clamp(36px, 5vw, 48px);
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero-subtitle {
+            font-size: 19px;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+        }
+
+        .chat-box {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .chat-header {
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .chat-status {
+            width: 10px;
+            height: 10px;
+            background: var(--accent);
+            border-radius: 50%;
+        }
+
+        .chat-header-text {
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .chat-input-area {
+            padding: 16px 20px;
+            display: flex;
+            gap: 12px;
+        }
+
+        .chat-input {
+            flex: 1;
+            padding: 12px 16px;
+            background: var(--bg-primary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 14px;
+            outline: none;
+        }
+
+        .chat-send {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .chat-send:hover { background: var(--accent-dark); }
+
+        .chat-note {
+            font-size: 11px;
+            color: var(--text-muted);
+            padding: 12px 20px;
+            background: var(--bg-tertiary);
+            text-align: center;
+        }
+
+        .stats-bar {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            padding: 48px 24px;
+        }
+
+        .stats-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px;
+        }
+
+        .stat { text-align: center; }
+
+        .stat-number {
+            font-family: var(--font-display);
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        .stat-source {
+            font-size: 11px;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        main {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 64px 24px;
+        }
+
+        .section {
+            margin-bottom: 64px;
+        }
+
+        .section-label {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+
+        h2 {
+            font-family: var(--font-display);
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .section > p {
+            font-size: 17px;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+
+        .key-fact {
+            background: var(--accent-light);
+            border-left: 4px solid var(--accent);
+            padding: 16px 20px;
+            margin: 24px 0;
+            border-radius: 4px;
+        }
+
+        .key-fact p {
+            font-size: 15px;
+            color: var(--text-primary);
+            margin: 0;
+        }
+
+        .types-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 32px;
+        }
+
+        .type-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 24px;
+        }
+
+        .type-card h3 {
+            font-family: var(--font-display);
+            font-size: 17px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .type-card p {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        .treatment-list {
+            list-style: none;
+            margin-top: 24px;
+            border-top: 1px solid var(--border);
+        }
+
+        .treatment-list li {
+            padding: 24px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .treatment-tag {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--accent);
+            background: var(--accent-light);
+            padding: 4px 8px;
+            border-radius: 4px;
+            margin-bottom: 8px;
+        }
+
+        .treatment-list h4 {
+            font-family: var(--font-display);
+            font-size: 17px;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .treatment-list p {
+            font-size: 15px;
+            color: var(--text-secondary);
+        }
+
+        .cta {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 48px;
+            text-align: center;
+            margin-top: 64px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 14px 28px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+
+        .cta-button:hover { background: var(--accent-dark); }
+
+        footer {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border);
+            padding: 48px 24px;
+        }
+
+        .footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+        }
+
+        .footer-links h4 {
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            display: block;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 14px;
+            margin-bottom: 8px;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover { color: var(--accent); }
+
+        .footer-bottom {
+            max-width: 1100px;
+            margin: 32px auto 0;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+            font-size: 13px;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            nav { display: none; }
+            .stats-inner { grid-template-columns: repeat(2, 1fr); }
+            .types-grid { grid-template-columns: 1fr; }
+            .footer-inner { grid-template-columns: 1fr; }
+        }
+    </style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is insomnia?","acceptedAnswer":{"@type":"Answer","text":"insomnia.md provides evidence-based health information."}}]}</script>
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <a href="/" class="logo">insomnia<span>.md</span></a>
+            <nav>
+                <a href="#about">About</a>
+                <a href="#types">Types</a>
+                <a href="#treatment">Treatment</a>
+                <a href="/resources.html">Resources</a>
+                <a href="/faq.html">FAQ</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-eyebrow">Sleep Disorder Resource</div>
+        <h1>Understanding and treating insomnia</h1>
+        <p class="hero-subtitle">Evidence-based information about insomnia — causes, symptoms, and effective treatments including CBT-I, the gold standard therapy. Get answers from clinical research.</p>
+        
+        <div class="chat-box">
+            <div class="chat-header">
+                <div class="chat-status"></div>
+                <span class="chat-header-text">Ask a question about insomnia</span>
+            </div>
+            <div class="chat-input-area">
+                <input type="text" class="chat-input" placeholder="What causes insomnia?">
+                <button class="chat-send">Ask</button>
+            </div>
+            <div class="chat-note">Answers sourced from peer-reviewed sleep research and clinical guidelines.</div>
+        </div>
+    </section>
+
+    <section class="stats-bar">
+        <div class="stats-inner">
+            <div class="stat">
+                <div class="stat-number">30%</div>
+                <div class="stat-label">Adults report insomnia symptoms</div>
+                <div class="stat-source">CDC, 2024</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">10%</div>
+                <div class="stat-label">Have chronic insomnia disorder</div>
+                <div class="stat-source">AASM, 2024</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">70-80%</div>
+                <div class="stat-label">Improvement with CBT-I therapy</div>
+                <div class="stat-source">Sleep Medicine Reviews</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">2x</div>
+                <div class="stat-label">Higher risk in women</div>
+                <div class="stat-source">NIH, 2024</div>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <section class="section" id="about">
+            <div class="section-label">Overview</div>
+            <h2>What is insomnia?</h2>
+            <p>Insomnia is a sleep disorder characterized by difficulty falling asleep, staying asleep, or waking too early and being unable to return to sleep. It affects daytime functioning and quality of life.</p>
+            <p>Unlike occasional sleepless nights, insomnia persists despite adequate opportunity for sleep. When symptoms occur at least three nights per week for three months or longer, it's classified as chronic insomnia disorder.</p>
+            
+            <div class="key-fact">
+                <p><strong>Key fact:</strong> Insomnia is not just about sleep duration. Many people with insomnia spend enough time in bed but experience poor sleep quality, leading to daytime fatigue, irritability, and difficulty concentrating.</p>
+            </div>
+        </section>
+
+        <section class="section" id="types">
+            <div class="section-label">Classification</div>
+            <h2>Types of insomnia</h2>
+            <p>Insomnia can be categorized by duration and cause:</p>
+            
+            <div class="types-grid">
+                <div class="type-card">
+                    <h3>Acute Insomnia</h3>
+                    <p>Short-term sleep difficulty lasting days to weeks, often triggered by stress, life changes, or environmental factors. Usually resolves without treatment.</p>
+                </div>
+                <div class="type-card">
+                    <h3>Chronic Insomnia</h3>
+                    <p>Sleep problems occurring at least 3 nights per week for 3+ months. Requires clinical evaluation and treatment, often with CBT-I as first-line therapy.</p>
+                </div>
+                <div class="type-card">
+                    <h3>Onset Insomnia</h3>
+                    <p>Difficulty falling asleep initially. Often related to anxiety, caffeine use, or delayed sleep phase disorder.</p>
+                </div>
+                <div class="type-card">
+                    <h3>Maintenance Insomnia</h3>
+                    <p>Difficulty staying asleep or early morning awakening. Common in depression, sleep apnea, and chronic pain conditions.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="treatment">
+            <div class="section-label">Treatment</div>
+            <h2>Evidence-based treatments</h2>
+            <p>Multiple effective treatments exist. CBT-I is recommended as first-line therapy by the American College of Physicians and American Academy of Sleep Medicine.</p>
+            
+            <ul class="treatment-list">
+                <li>
+                    <span class="treatment-tag">Gold Standard</span>
+                    <h4>Cognitive Behavioral Therapy for Insomnia (CBT-I)</h4>
+                    <p>Structured therapy addressing thoughts and behaviors that interfere with sleep. Includes sleep restriction, stimulus control, and cognitive restructuring. 70-80% of patients show significant improvement. Effects are long-lasting, unlike medication.</p>
+                </li>
+                <li>
+                    <span class="treatment-tag">Foundation</span>
+                    <h4>Sleep Hygiene</h4>
+                    <p>Consistent sleep schedule, cool dark bedroom, limiting caffeine/alcohol, avoiding screens before bed, and regular exercise. While not sufficient alone for chronic insomnia, essential for all treatment plans.</p>
+                </li>
+                <li>
+                    <span class="treatment-tag">Short-term</span>
+                    <h4>Medications</h4>
+                    <p>Sedative-hypnotics (e.g., zolpidem) or low-dose sedating antidepressants may be prescribed short-term. Guidelines recommend trying CBT-I first due to better long-term outcomes and no dependency risk.</p>
+                </li>
+                <li>
+                    <span class="treatment-tag">Adjunctive</span>
+                    <h4>Relaxation Techniques</h4>
+                    <p>Progressive muscle relaxation, deep breathing, meditation, and mindfulness can reduce pre-sleep arousal. Often incorporated into CBT-I programs.</p>
+                </li>
+            </ul>
+        </section>
+
+        <div class="cta">
+            <h2>Struggling with sleep?</h2>
+            <p>If insomnia is affecting your daily life, evidence-based treatment can help. Most people improve significantly with CBT-I.</p>
+            <a href="/resources.html" class="cta-button">Find Sleep Resources</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <a href="/" class="logo">insomnia<span>.md</span></a>
+                <p style="font-size: 14px; color: var(--text-muted); margin-top: 12px;">Part of the <a href="https://thrive.md" style="color: var(--accent); text-decoration: none;">thrive.md</a> health network. Evidence-based sleep information, reviewed by sleep medicine specialists.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Learn</h4>
+                <a href="/insomnia-guide.html">Complete Guide</a>
+                <a href="/treatment.html">Treatments</a>
+                <a href="/faq.html">FAQ</a>
+                <a href="/blog.html">Blog</a>
+            </div>
+            <div class="footer-links">
+                <h4>Resources</h4>
+                <a href="/resources.html#cbti">CBT-I Providers</a>
+                <a href="/resources.html#apps">Sleep Apps</a>
+                <a href="/resources.html#tools">Sleep Diary</a>
+            </div>
+            <div class="footer-links">
+                <h4>About</h4>
+                <a href="/editorial-policy.html">Editorial Policy</a>
+                <a href="/medical-review.html">Medical Review</a>
+                <a href="mailto:hello@thrive.md">Contact</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2026 insomnia.md · A <a href="https://thrive.md" style="color: var(--text-muted); text-decoration: none;">thrive.md</a> property
+        </div>
+    </footer>
+
+    <script>
+        const QA_API = 'https://md-qa.md-health.workers.dev/ask';
+        
+        document.querySelector('.chat-send').addEventListener('click', async () => {
+            const input = document.querySelector('.chat-input');
+            const question = input.value.trim();
+            if (!question) return;
+            
+            try {
+                const response = await fetch(QA_API, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ question, topic: 'insomnia' })
+                });
+                
+                if (response.ok) {
+                    window.location.href = '#answer';
+                }
+            } catch (error) {
+                console.error('Q&A error:', error);
+            }
+            
+            input.value = '';
+        });
+    </script>
+</body>
+</html>

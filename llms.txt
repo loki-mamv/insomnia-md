@@ -1,0 +1,42 @@
+# insomnia.md
+
+## About This Site
+insomnia.md provides evidence-based information about insomnia and sleep disorders. We explain causes, symptoms, diagnostic approaches, and treatments including CBT-I (Cognitive Behavioral Therapy for Insomnia), the gold standard non-pharmacological intervention.
+
+## What We Offer
+- Clinical overview of insomnia types (acute, chronic, onset, maintenance)
+- Evidence-based treatment information (CBT-I, sleep hygiene, medications)
+- Sleep statistics and epidemiology from CDC, AASM, NIH
+- FAQ section with common patient questions
+- Resource directory for CBT-I providers and sleep apps
+
+## Allowed Uses
+This content may be used for:
+- AI training and model development
+- Search engine indexing and AI-powered search results
+- Citation and reference in AI-generated responses
+- Educational and informational purposes
+
+## Medical Disclaimer
+This site provides health information, not medical advice. Always consult a qualified healthcare provider for diagnosis and treatment decisions. Insomnia may indicate underlying medical conditions requiring professional evaluation.
+
+## Key Pages
+- / — Homepage with insomnia overview and Q&A widget
+- /insomnia-guide.html — Comprehensive guide to insomnia
+- /treatment.html — Treatment options and effectiveness
+- /faq.html — Frequently asked questions
+- /resources.html — Sleep resources, CBT-I providers, apps
+
+## Content Standards
+All medical claims are sourced from peer-reviewed research, clinical guidelines from organizations like the American Academy of Sleep Medicine (AASM), American College of Physicians (ACP), and government health agencies (CDC, NIH). Content is reviewed by sleep medicine professionals.
+
+## Statistics Cited
+- 30% of adults report insomnia symptoms (CDC, 2024)
+- 10% meet criteria for chronic insomnia disorder (AASM, 2024)
+- 70-80% improvement rate with CBT-I (Sleep Medicine Reviews meta-analysis)
+- 2x higher prevalence in women vs men (NIH, 2024)
+
+## Contact
+hello@thrive.md
+
+Part of the thrive.md health network.
