@@ -253,6 +253,153 @@
 
         .chat-send:hover { background: var(--accent-dark); }
 
+        /* ===== FULL Q&A WIDGET STYLES ===== */
+        .chat-panel {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: min(420px, 100vw);
+            background: var(--bg-primary);
+            border-left: 1px solid var(--border);
+            z-index: 200;
+            display: flex;
+            flex-direction: column;
+            box-shadow: -4px 0 24px rgba(0,0,0,0.08);
+        }
+        .chat-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: none;
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+            color: var(--text-muted);
+            padding: 4px;
+            line-height: 1;
+            z-index: 1;
+        }
+        .chat-header { background: var(--bg-secondary); flex-shrink: 0; }
+        .chat-header-text { font-size: 14px; font-weight: 600; }
+        .chat-header-sub { display: block; font-size: 11px; font-weight: 400; color: var(--text-muted); }
+        .chat-messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: 16px;
+            display: none;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .chat-messages.active { display: flex; }
+        .chat-message { display: flex; gap: 10px; align-items: flex-start; }
+        .chat-avatar {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: var(--accent);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        .chat-bubble {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 12px 14px;
+            font-size: 14px;
+            line-height: 1.6;
+            max-width: calc(100% - 42px);
+        }
+        .chat-bubble p { margin: 0 0 8px; }
+        .chat-bubble p:last-child { margin: 0; }
+        .chat-bubble a { color: var(--accent); }
+        .chat-bubble sup a { font-size: 10px; }
+        .chat-message.user .chat-bubble {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+        }
+        .chat-message.user .chat-avatar { background: var(--text-secondary); }
+        .chat-message.error .chat-bubble { background: #fef2f2; border-color: #fca5a5; color: #dc2626; }
+        .chat-input-area {
+            padding: 12px 16px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            gap: 8px;
+            align-items: flex-end;
+            flex-shrink: 0;
+        }
+        .chat-input {
+            flex: 1;
+            padding: 10px 14px;
+            background: var(--bg-primary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 14px;
+            font-family: var(--font-body);
+            outline: none;
+            transition: border-color 0.2s;
+            line-height: 1.5;
+        }
+        .chat-input:focus { border-color: var(--accent); }
+        .chat-send {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 10px 16px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: var(--font-body);
+            font-size: 14px;
+            transition: background 0.2s;
+            flex-shrink: 0;
+        }
+        .chat-send:hover { background: var(--accent-dark); }
+        .qa-suggestions {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            padding: 8px 16px 12px;
+            border-bottom: 1px solid var(--border);
+        }
+        .qa-suggestions span {
+            font-size: 13px;
+            color: var(--accent);
+            background: var(--accent-light);
+            border: 1px solid var(--accent-light);
+            padding: 5px 12px;
+            border-radius: 16px;
+            cursor: pointer;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+        .qa-suggestions span:hover { background: var(--accent); color: white; }
+
+        body.split-mode main,
+        body.split-mode .stats-bar,
+        body.split-mode header,
+        body.split-mode footer,
+        body.split-mode .hero {
+            margin-right: min(420px, 100vw);
+        }
+        body.split-mode .hero .chat-box { display: none; }
+
+        @media (max-width: 768px) {
+            body.split-mode main,
+            body.split-mode .stats-bar,
+            body.split-mode header,
+            body.split-mode footer,
+            body.split-mode .hero { margin-right: 0; }
+            .chat-panel { width: 100vw; }
+        }
+
+
         .chat-note {
             font-size: 11px;
             color: var(--text-muted);
@@ -435,8 +582,8 @@
             max-width: 1100px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 40px;
+            grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+            gap: 32px;
         }
 
         .footer-links h4 {
@@ -477,10 +624,27 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is insomnia?","acceptedAnswer":{"@type":"Answer","text":"insomnia.md provides evidence-based health information."}}]}</script>
 </head>
 <body>
-    <header>
+        <!-- Split-mode chat panel -->
+    <div class="chat-panel" id="chat-panel" style="display: none;">
+        <button class="chat-close" onclick="closeSplitMode()">✕</button>
+        <div class="chat-header">
+            <div class="chat-status"></div>
+            <span class="chat-header-text">Ask about insomnia<span class="chat-header-sub">— sleep medicine research & guidelines</span></span>
+        </div>
+        <div id="panel-messages" class="chat-messages"></div>
+        <div class="chat-input-area">
+            <textarea id="panel-input" class="chat-input" placeholder="Ask a follow-up question..." rows="1" style="resize:none;"></textarea>
+            <button id="panel-submit" class="chat-send" onclick="askQuestion()">
+                <span>Send</span>
+            </button>
+        </div>
+    </div>
+
+<header>
         <div class="header-inner">
             <a href="/" class="logo">insomnia<span>.md</span></a>
             <nav>
+                <a href="#ask" onclick="event.preventDefault(); activateSplitMode(); document.getElementById('panel-input').focus();">Ask</a>
                 <a href="#about">About</a>
                 <a href="#types">Types</a>
                 <a href="#treatment">Treatment</a>
@@ -496,16 +660,30 @@
         <h1>Understanding and treating insomnia</h1>
         <p class="hero-subtitle">Evidence-based information about insomnia — causes, symptoms, and effective treatments including CBT-I, the gold standard therapy. Get answers from clinical research.</p>
         
-        <div class="chat-box">
+        <div class="chat-box" id="ask">
             <div class="chat-header">
                 <div class="chat-status"></div>
-                <span class="chat-header-text">Ask a question about insomnia</span>
+                <span class="chat-header-text">Ask about insomnia<span class="chat-header-sub">— answers from sleep medicine research</span></span>
+            </div>
+            <div id="chat-messages" class="chat-messages active">
+                <div class="chat-message assistant">
+                    <div class="chat-avatar">MD</div>
+                    <div class="chat-bubble"><p>I can answer questions about insomnia based on sleep medicine research and clinical guidelines. Ask me about causes, treatments like CBT-I, sleep hygiene, or medications.</p></div>
+                </div>
             </div>
             <div class="chat-input-area">
-                <input type="text" class="chat-input" placeholder="What causes insomnia?">
-                <button class="chat-send">Ask</button>
+                <textarea id="qa-input" class="chat-input" placeholder="Ask about insomnia..." rows="1" style="resize:none;"></textarea>
+                <button id="qa-submit" class="chat-send" onclick="askQuestion()">
+                    <span>Send</span>
+                </button>
             </div>
-            <div class="chat-note">Answers sourced from peer-reviewed sleep research and clinical guidelines.</div>
+            <div id="qa-suggestions" class="qa-suggestions">
+                <span onclick="askSuggestion(this)">What causes chronic insomnia?</span>
+                <span onclick="askSuggestion(this)">How does CBT-I work?</span>
+                <span onclick="askSuggestion(this)">Best sleep hygiene tips?</span>
+                <span onclick="askSuggestion(this)">Insomnia medications compared?</span>
+            </div>
+            <div class="chat-note">Answers based on AASM clinical practice guidelines and peer-reviewed sleep medicine research. Not a substitute for professional care.</div>
         </div>
     </section>
 
@@ -605,6 +783,30 @@
             <p>If insomnia is affecting your daily life, evidence-based treatment can help. Most people improve significantly with CBT-I.</p>
             <a href="/resources.html" class="cta-button">Find Sleep Resources</a>
         </div>
+        <section class="section" id="related">
+            <div class="section-label">Related Topics</div>
+            <h2>Conditions commonly linked to insomnia</h2>
+            <p>Insomnia rarely occurs in isolation. These conditions frequently co-occur with chronic insomnia and addressing them often improves sleep outcomes.</p>
+            <div class="types-grid">
+                <div class="type-card">
+                    <h3><a href="https://anxiety.md" style="color: var(--accent); text-decoration: none;">Anxiety →</a></h3>
+                    <p>Anxiety is one of the most common causes of insomnia. Racing thoughts and hyperarousal make falling and staying asleep difficult. CBT-I and CBT for anxiety overlap significantly.</p>
+                </div>
+                <div class="type-card">
+                    <h3><a href="https://depression.md" style="color: var(--accent); text-decoration: none;">Depression →</a></h3>
+                    <p>Insomnia is both a symptom and a risk factor for depression. Early morning awakening is a hallmark of depression-related sleep disruption.</p>
+                </div>
+                <div class="type-card">
+                    <h3><a href="https://ptsd.md" style="color: var(--accent); text-decoration: none;">PTSD →</a></h3>
+                    <p>PTSD-related nightmares and hypervigilance severely disrupt sleep. Image Rehearsal Therapy (IRT) combined with CBT-I is often recommended.</p>
+                </div>
+                <div class="type-card">
+                    <h3><a href="https://mental.md" style="color: var(--accent); text-decoration: none;">Mental Health Hub →</a></h3>
+                    <p>Sleep problems intersect with virtually every mental health condition. mental.md covers conditions, therapy types, finding providers, and crisis resources.</p>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <footer>
@@ -633,6 +835,14 @@
                 <a href="/medical-review.html">Medical Review</a>
                 <a href="mailto:hello@thrive.md">Contact</a>
             </div>
+            <div class="footer-links">
+                <h4>Related Topics</h4>
+                <a href="https://anxiety.md">anxiety.md</a>
+                <a href="https://depression.md">depression.md</a>
+                <a href="https://ptsd.md">ptsd.md</a>
+                <a href="https://mental.md">mental.md</a>
+                <a href="https://thrive.md">thrive.md</a>
+            </div>
         </div>
         <div class="footer-bottom">
             © 2026 insomnia.md · A <a href="https://thrive.md" style="color: var(--text-muted); text-decoration: none;">thrive.md</a> property
@@ -641,27 +851,150 @@
 
     <script>
         const QA_API = 'https://md-qa.md-health.workers.dev/ask';
-        
-        document.querySelector('.chat-send').addEventListener('click', async () => {
-            const input = document.querySelector('.chat-input');
+        const SESSION_ID = localStorage.getItem('md_uid') || (() => { const id = 'u_' + crypto.randomUUID(); localStorage.setItem('md_uid', id); return id; })();
+        const TOPIC = 'insomnia';
+
+        let splitModeActive = false;
+
+        function getActiveMessagesDiv() {
+            return splitModeActive
+                ? document.getElementById('panel-messages')
+                : document.getElementById('chat-messages');
+        }
+
+        function getActiveInput() {
+            return splitModeActive
+                ? document.getElementById('panel-input')
+                : document.getElementById('qa-input');
+        }
+
+        function activateSplitMode() {
+            splitModeActive = true;
+            document.body.classList.add('split-mode');
+            document.getElementById('chat-panel').style.display = 'flex';
+            document.getElementById('chat-panel').style.flexDirection = 'column';
+            // Copy messages to panel
+            const heroMessages = document.getElementById('chat-messages');
+            const panelMessages = document.getElementById('panel-messages');
+            panelMessages.innerHTML = heroMessages.innerHTML;
+            panelMessages.classList.add('active');
+        }
+
+        function closeSplitMode() {
+            splitModeActive = false;
+            document.body.classList.remove('split-mode');
+            document.getElementById('chat-panel').style.display = 'none';
+        }
+
+        function addMessage(text, role = 'assistant') {
+            const container = getActiveMessagesDiv();
+            if (!container.classList.contains('active')) container.classList.add('active');
+            const div = document.createElement('div');
+            div.className = 'chat-message ' + role;
+            if (role !== 'user') {
+                div.innerHTML = '<div class="chat-avatar">MD</div><div class="chat-bubble"><p>' + text + '</p></div>';
+            } else {
+                div.innerHTML = '<div class="chat-avatar">You</div><div class="chat-bubble"><p>' + text + '</p></div>';
+            }
+            container.appendChild(div);
+            container.scrollTop = container.scrollHeight;
+            return div;
+        }
+
+        async function askQuestion() {
+            const input = getActiveInput();
             const question = input.value.trim();
             if (!question) return;
-            
+
+            if (!splitModeActive) activateSplitMode();
+            input.value = '';
+
+            // Auto-resize textarea
+            input.style.height = 'auto';
+
+            const suggestions = document.getElementById('qa-suggestions');
+            if (suggestions) suggestions.style.display = 'none';
+
+            addMessage(question, 'user');
+            const responseMsg = addMessage('Thinking...');
+
             try {
-                const response = await fetch(QA_API, {
+                const res = await fetch(QA_API, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ question, topic: 'insomnia' })
+                    body: JSON.stringify({ question, topic: TOPIC, sessionId: SESSION_ID }),
                 });
-                
-                if (response.ok) {
-                    window.location.href = '#answer';
+
+                if (!res.ok) {
+                    const error = await res.json().catch(() => ({}));
+                    throw new Error(error.error || 'Request failed');
                 }
-            } catch (error) {
-                console.error('Q&A error:', error);
+
+                const reader = res.body.getReader();
+                const decoder = new TextDecoder();
+                let fullText = '';
+
+                const bubble = responseMsg.querySelector('.chat-bubble');
+                bubble.innerHTML = '';
+
+                while (true) {
+                    const { done, value } = await reader.read();
+                    if (done) break;
+                    const chunk = decoder.decode(value, { stream: true });
+                    const lines = chunk.split('\n');
+                    for (const line of lines) {
+                        if (line.startsWith('data: ')) {
+                            const data = line.slice(6);
+                            if (data === '[DONE]') break;
+                            try {
+                                const parsed = JSON.parse(data);
+                                if (parsed.text) {
+                                    fullText += parsed.text;
+                                    bubble.innerHTML = '<p>' + fullText.replace(/\n\n/g, '</p><p>').replace(/\n/g, '<br>') + '</p>';
+                                    getActiveMessagesDiv().scrollTop = getActiveMessagesDiv().scrollHeight;
+                                }
+                            } catch(e) {}
+                        }
+                    }
+                }
+
+                if (!fullText) {
+                    bubble.innerHTML = '<p>I couldn\'t find a specific answer. Please consult a healthcare provider for personalized advice.</p>';
+                }
+
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'qa_widget_opened', { event_category: 'engagement', event_label: TOPIC });
+                }
+
+            } catch (err) {
+                const bubble = responseMsg.querySelector('.chat-bubble');
+                responseMsg.classList.add('error');
+                bubble.innerHTML = '<p>Sorry, I\'m having trouble connecting. Please try again in a moment.</p>';
             }
-            
-            input.value = '';
+        }
+
+        function askSuggestion(el) {
+            const input = getActiveInput();
+            input.value = el.textContent;
+            askQuestion();
+        }
+
+        // Auto-resize textarea on input
+        document.addEventListener('DOMContentLoaded', () => {
+            ['qa-input', 'panel-input'].forEach(id => {
+                const el = document.getElementById(id);
+                if (!el) return;
+                el.addEventListener('input', () => {
+                    el.style.height = 'auto';
+                    el.style.height = Math.min(el.scrollHeight, 120) + 'px';
+                });
+                el.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' && !e.shiftKey) {
+                        e.preventDefault();
+                        askQuestion();
+                    }
+                });
+            });
         });
     </script>
 </body>
