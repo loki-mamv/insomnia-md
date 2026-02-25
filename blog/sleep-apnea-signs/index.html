@@ -42,7 +42,7 @@
           "mainEntityOfPage": {"@id": "https://insomnia.md/blog/sleep-apnea-signs/#article"},
           "wordCount": "672",
           "lastReviewed": "2026-02-19",
-          "reviewedBy": {"@type": "Organization", "name": "thrive.md Clinical Advisory Team"}
+          "reviewedBy": {"@type": "Person", "name": "Dr. Agustin Arrieta", "jobTitle": "MD"}
         },{"@type":"FAQPage","mainEntity":[{"@type": "Question", "name": "Can thin people have sleep apnea?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. While obesity is the strongest risk factor, 20-30% of OSA patients are not overweight. Facial anatomy (recessed jaw, large tonsils, narrow airway), genetics, and aging all contribute. insomnia.md recommends evaluation based on symptoms, not weight alone."}}, {"@type": "Question", "name": "Can sleep apnea cause insomnia?", "acceptedAnswer": {"@type": "Answer", "text": "Yes \u2014 and this is underrecognized. Frequent arousals from apnea events can cause difficulty staying asleep, frequent awakenings, and non-restorative sleep that looks like insomnia. If insomnia treatment isn't working, sleep apnea should be investigated as an underlying cause."}}, {"@type": "Question", "name": "Do I need a prescription for a sleep apnea test?", "acceptedAnswer": {"@type": "Answer", "text": "For insurance-covered testing, you typically need a doctor's order. Some direct-to-consumer home sleep test services are available, but results should be reviewed by a sleep medicine specialist for proper interpretation and treatment recommendations."}}, {"@type": "Question", "name": "Can weight loss cure sleep apnea?", "acceptedAnswer": {"@type": "Answer", "text": "In many cases, yes. A 10% weight loss can reduce AHI by 26-50%. Some patients achieve complete resolution of OSA with significant weight loss. However, non-obese patients and those with anatomical factors may still have OSA regardless of weight. insomnia.md recommends continued monitoring even after weight loss."}}]}
       ]
     }
@@ -144,6 +144,11 @@
             .article-header h1 { font-size: 1.75rem; }
             .related-grid { grid-template-columns: 1fr; }
         }
+    
+        /* Medical Reviewer Badge */
+        .medical-reviewer { display: flex; align-items: center; gap: 0.4rem; margin-top: 0.75rem; padding: 0.5rem 0.75rem; background: #f0fdfa; border: 1px solid #ccfbf1; border-radius: 6px; font-size: 0.8rem; color: #0f766e; width: fit-content; }
+        .medical-reviewer svg { flex-shrink: 0; }
+        .medical-disclaimer { font-size: 0.75rem; color: var(--text-muted, #94a3b8); margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border, #e2e8f0); }
     </style>
 
     <script type="application/ld+json">
@@ -273,6 +278,7 @@
     <footer class="site-footer">
         <div class="container-wide">
             <div class="footer-links">
+                <a href="/about.html">About &amp; Editorial Policy</a>
                 <a href="https://thrive.md">thrive.md</a>
                 <a href="https://anxiety.md">anxiety.md</a>
                 <a href="https://depression.md">depression.md</a>

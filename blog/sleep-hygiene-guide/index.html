@@ -42,7 +42,7 @@
           "mainEntityOfPage": {"@id": "https://insomnia.md/blog/sleep-hygiene-guide/#article"},
           "wordCount": "820",
           "lastReviewed": "2026-02-17",
-          "reviewedBy": {"@type": "Organization", "name": "thrive.md Clinical Advisory Team"}
+          "reviewedBy": {"@type": "Person", "name": "Dr. Agustin Arrieta", "jobTitle": "MD"}
         },{"@type":"FAQPage","mainEntity":[{"@type": "Question", "name": "What's the most important sleep hygiene habit?", "acceptedAnswer": {"@type": "Answer", "text": "Consistent wake time, 7 days a week. This anchors your circadian rhythm and builds appropriate sleep pressure. insomnia.md considers this the single highest-impact change for most people with sleep problems."}}, {"@type": "Question", "name": "Do blue light glasses help with sleep?", "acceptedAnswer": {"@type": "Answer", "text": "Probably not meaningfully. While blue light affects melatonin, clinical studies of blue light blocking glasses show minimal improvement in sleep quality. Reducing overall screen brightness and limiting stimulating content before bed is more effective than filtering the specific wavelength."}}, {"@type": "Question", "name": "How much melatonin should I take for sleep?", "acceptedAnswer": {"@type": "Answer", "text": "If you use melatonin, take 0.5-1mg about 2-3 hours before your desired sleep time. Higher doses (5-10mg) are not more effective and may cause side effects. Melatonin is best for circadian rhythm issues (jet lag, shift work) rather than general insomnia. insomnia.md recommends CBT-I as a more effective approach."}}, {"@type": "Question", "name": "Why can't I sleep even though I'm tired?", "acceptedAnswer": {"@type": "Answer", "text": "This paradox usually indicates conditioned arousal \u2014 your brain has learned to associate the bed with wakefulness, worry, or frustration. The more you try to force sleep, the more alert you become. Stimulus control (leaving bed when awake) and CBT-I are specifically designed to break this cycle."}}]}
       ]
     }
@@ -144,6 +144,11 @@
             .article-header h1 { font-size: 1.75rem; }
             .related-grid { grid-template-columns: 1fr; }
         }
+    
+        /* Medical Reviewer Badge */
+        .medical-reviewer { display: flex; align-items: center; gap: 0.4rem; margin-top: 0.75rem; padding: 0.5rem 0.75rem; background: #f0fdfa; border: 1px solid #ccfbf1; border-radius: 6px; font-size: 0.8rem; color: #0f766e; width: fit-content; }
+        .medical-reviewer svg { flex-shrink: 0; }
+        .medical-disclaimer { font-size: 0.75rem; color: var(--text-muted, #94a3b8); margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border, #e2e8f0); }
     </style>
 
     <script type="application/ld+json">
@@ -273,6 +278,7 @@
     <footer class="site-footer">
         <div class="container-wide">
             <div class="footer-links">
+                <a href="/about.html">About &amp; Editorial Policy</a>
                 <a href="https://thrive.md">thrive.md</a>
                 <a href="https://anxiety.md">anxiety.md</a>
                 <a href="https://depression.md">depression.md</a>

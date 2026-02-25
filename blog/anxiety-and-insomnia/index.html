@@ -42,7 +42,7 @@
           "mainEntityOfPage": {"@id": "https://insomnia.md/blog/anxiety-and-insomnia/#article"},
           "wordCount": "790",
           "lastReviewed": "2026-02-20",
-          "reviewedBy": {"@type": "Organization", "name": "thrive.md Clinical Advisory Team"}
+          "reviewedBy": {"@type": "Person", "name": "Dr. Agustin Arrieta", "jobTitle": "MD"}
         },{"@type":"FAQPage","mainEntity":[{"@type": "Question", "name": "Why does my mind race only at bedtime?", "acceptedAnswer": {"@type": "Answer", "text": "During the day, you're distracted by activities, work, and stimulation. Bedtime removes all distractions, creating a quiet space where suppressed worries surface. Additionally, the brain's default mode network (responsible for self-reflection and rumination) becomes more active during quiet, unstimulated periods. Scheduled worry time and wind-down activities help address thoughts before bedtime."}}, {"@type": "Question", "name": "Should I take anxiety medication or sleep medication?", "acceptedAnswer": {"@type": "Answer", "text": "If anxiety is the root cause of your insomnia, treating the anxiety is more effective than treating the insomnia symptom. An SSRI plus short-term sleep support (like trazodone) addresses both. insomnia.md recommends avoiding benzodiazepines and Z-drugs for anxiety-driven insomnia due to dependency risk and rebound effects."}}, {"@type": "Question", "name": "Does CBT-I work for anxiety-related insomnia?", "acceptedAnswer": {"@type": "Answer", "text": "Yes \u2014 and it's especially effective. CBT-I addresses both the behavioral patterns (avoiding bed when awake, consistent wake time) and the cognitive patterns (catastrophic thinking about sleep, performance anxiety) that maintain anxiety-driven insomnia. Studies show CBT-I reduces both insomnia severity and anxiety symptoms simultaneously."}}, {"@type": "Question", "name": "Can insomnia cause anxiety, or does anxiety cause insomnia?", "acceptedAnswer": {"@type": "Answer", "text": "Both. The relationship is bidirectional. Chronic insomnia increases anxiety risk by 2-3x, and anxiety disorders increase insomnia risk by 2-3x. Once established, they feed each other. The good news: treating either condition tends to improve both."}}]}
       ]
     }
@@ -144,6 +144,11 @@
             .article-header h1 { font-size: 1.75rem; }
             .related-grid { grid-template-columns: 1fr; }
         }
+    
+        /* Medical Reviewer Badge */
+        .medical-reviewer { display: flex; align-items: center; gap: 0.4rem; margin-top: 0.75rem; padding: 0.5rem 0.75rem; background: #f0fdfa; border: 1px solid #ccfbf1; border-radius: 6px; font-size: 0.8rem; color: #0f766e; width: fit-content; }
+        .medical-reviewer svg { flex-shrink: 0; }
+        .medical-disclaimer { font-size: 0.75rem; color: var(--text-muted, #94a3b8); margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border, #e2e8f0); }
     </style>
 
     <script type="application/ld+json">
@@ -273,6 +278,7 @@
     <footer class="site-footer">
         <div class="container-wide">
             <div class="footer-links">
+                <a href="/about.html">About &amp; Editorial Policy</a>
                 <a href="https://thrive.md">thrive.md</a>
                 <a href="https://anxiety.md">anxiety.md</a>
                 <a href="https://depression.md">depression.md</a>

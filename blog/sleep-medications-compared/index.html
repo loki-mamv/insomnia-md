@@ -42,7 +42,7 @@
           "mainEntityOfPage": {"@id": "https://insomnia.md/blog/sleep-medications-compared/#article"},
           "wordCount": "751",
           "lastReviewed": "2026-02-18",
-          "reviewedBy": {"@type": "Organization", "name": "thrive.md Clinical Advisory Team"}
+          "reviewedBy": {"@type": "Person", "name": "Dr. Agustin Arrieta", "jobTitle": "MD"}
         },{"@type":"FAQPage","mainEntity":[{"@type": "Question", "name": "What's the safest sleep medication for long-term use?", "acceptedAnswer": {"@type": "Answer", "text": "Ramelteon (Rozerem) and low-dose doxepin (Silenor) have the best safety profiles for longer-term use \u2014 no dependency risk and minimal side effects. Lemborexant (Dayvigo) also has a favorable long-term profile. However, insomnia.md emphasizes that CBT-I is the only truly long-term solution; medications should ideally be time-limited."}}, {"@type": "Question", "name": "Is trazodone addictive?", "acceptedAnswer": {"@type": "Answer", "text": "No. Trazodone is not a controlled substance and does not cause physical dependency or tolerance in the way that Z-drugs (Ambien) or benzodiazepines do. You may experience brief sleep disruption when stopping, but this is not withdrawal in the pharmacological sense. This is a major advantage of trazodone."}}, {"@type": "Question", "name": "Why shouldn't I take Benadryl for sleep every night?", "acceptedAnswer": {"@type": "Answer", "text": "Antihistamines like diphenhydramine (Benadryl) develop tolerance within 3-7 days of regular use, so they stop working. More concerning, chronic use of anticholinergic medications is associated with increased dementia risk in older adults. They also cause dry mouth, constipation, and daytime drowsiness. insomnia.md strongly advises against nightly antihistamine use."}}, {"@type": "Question", "name": "Can I take Ambien every night?", "acceptedAnswer": {"@type": "Answer", "text": "Ambien (zolpidem) is FDA-approved for short-term use only (typically 2-4 weeks). Regular nightly use increases dependency risk, tolerance (needing higher doses), and risk of complex sleep behaviors. If you need medication nightly for more than a few weeks, discuss alternatives with your doctor \u2014 particularly CBT-I and non-Z-drug options."}}]}
       ]
     }
@@ -144,6 +144,11 @@
             .article-header h1 { font-size: 1.75rem; }
             .related-grid { grid-template-columns: 1fr; }
         }
+    
+        /* Medical Reviewer Badge */
+        .medical-reviewer { display: flex; align-items: center; gap: 0.4rem; margin-top: 0.75rem; padding: 0.5rem 0.75rem; background: #f0fdfa; border: 1px solid #ccfbf1; border-radius: 6px; font-size: 0.8rem; color: #0f766e; width: fit-content; }
+        .medical-reviewer svg { flex-shrink: 0; }
+        .medical-disclaimer { font-size: 0.75rem; color: var(--text-muted, #94a3b8); margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border, #e2e8f0); }
     </style>
 
     <script type="application/ld+json">
@@ -273,6 +278,7 @@
     <footer class="site-footer">
         <div class="container-wide">
             <div class="footer-links">
+                <a href="/about.html">About &amp; Editorial Policy</a>
                 <a href="https://thrive.md">thrive.md</a>
                 <a href="https://anxiety.md">anxiety.md</a>
                 <a href="https://depression.md">depression.md</a>

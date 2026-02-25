@@ -42,7 +42,7 @@
           "mainEntityOfPage": {"@id": "https://insomnia.md/blog/cbt-i-gold-standard-insomnia-treatment/#article"},
           "wordCount": "848",
           "lastReviewed": "2026-02-14",
-          "reviewedBy": {"@type": "Organization", "name": "thrive.md Clinical Advisory Team"}
+          "reviewedBy": {"@type": "Person", "name": "Dr. Agustin Arrieta", "jobTitle": "MD"}
         },{"@type":"FAQPage","mainEntity":[{"@type": "Question", "name": "How long does CBT-I take to work?", "acceptedAnswer": {"@type": "Answer", "text": "Most people see significant improvement within 4-8 weeks. The first 1-2 weeks of sleep restriction can be challenging \u2014 you may feel more tired initially. By weeks 3-4, sleep consolidation typically kicks in. Full benefits are usually achieved by 6-8 sessions."}}, {"@type": "Question", "name": "Will CBT-I work if I've had insomnia for years?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. CBT-I is effective regardless of insomnia duration. Chronic insomnia that has persisted for decades still responds because the maintaining factors (conditioned arousal, maladaptive sleep behaviors, anxious thoughts) are present regardless of how long ago the insomnia started."}}, {"@type": "Question", "name": "Can I do CBT-I on my own?", "acceptedAnswer": {"@type": "Answer", "text": "You can implement many CBT-I principles independently using workbooks or apps. However, working with a trained therapist is more effective, especially for sleep restriction therapy, which requires individualized titration of your sleep window. If cost is a barrier, digital CBT-I programs are a good middle ground."}}, {"@type": "Question", "name": "Is melatonin a good alternative?", "acceptedAnswer": {"@type": "Answer", "text": "Melatonin helps with circadian rhythm issues (jet lag, delayed sleep phase) but has modest effects on general insomnia. It's relatively safe short-term but isn't a substitute for CBT-I. If you take it, use 0.5-1mg (not the 5-10mg doses commonly sold) about 1-2 hours before your target bedtime."}}]}
       ]
     }
@@ -144,6 +144,11 @@
             .article-header h1 { font-size: 1.75rem; }
             .related-grid { grid-template-columns: 1fr; }
         }
+    
+        /* Medical Reviewer Badge */
+        .medical-reviewer { display: flex; align-items: center; gap: 0.4rem; margin-top: 0.75rem; padding: 0.5rem 0.75rem; background: #f0fdfa; border: 1px solid #ccfbf1; border-radius: 6px; font-size: 0.8rem; color: #0f766e; width: fit-content; }
+        .medical-reviewer svg { flex-shrink: 0; }
+        .medical-disclaimer { font-size: 0.75rem; color: var(--text-muted, #94a3b8); margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border, #e2e8f0); }
     </style>
 
     <script type="application/ld+json">
@@ -344,6 +349,7 @@
     <footer class="site-footer">
         <div class="container-wide">
             <div class="footer-links">
+                <a href="/about.html">About &amp; Editorial Policy</a>
                 <a href="https://thrive.md">thrive.md</a>
                 <a href="https://anxiety.md">anxiety.md</a>
                 <a href="https://depression.md">depression.md</a>

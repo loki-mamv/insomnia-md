@@ -42,7 +42,7 @@
           "mainEntityOfPage": {"@id": "https://insomnia.md/blog/melatonin-truth/#article"},
           "wordCount": "681",
           "lastReviewed": "2026-02-24",
-          "reviewedBy": {"@type": "Organization", "name": "thrive.md Clinical Advisory Team"}
+          "reviewedBy": {"@type": "Person", "name": "Dr. Agustin Arrieta", "jobTitle": "MD"}
         },{"@type":"FAQPage","mainEntity":[{"@type": "Question", "name": "Is it safe to take melatonin every night?", "acceptedAnswer": {"@type": "Answer", "text": "Short-to-medium term daily use (weeks to months) at appropriate doses (0.3-1mg) appears safe for adults. Long-term safety data beyond 1-2 years is limited. insomnia.md recommends addressing the underlying cause of sleep problems rather than relying on melatonin indefinitely. It's not dangerous, but it's also probably not solving your actual problem."}}, {"@type": "Question", "name": "Why is 0.3mg melatonin better than 10mg?", "acceptedAnswer": {"@type": "Answer", "text": "Your body naturally produces about 0.3mg of melatonin equivalent. Taking 10mg raises blood levels 50-100x above normal, which can cause morning grogginess, disrupt your circadian rhythm, and paradoxically impair sleep. Studies comparing doses found 0.3mg equally or more effective than 3mg for improving sleep onset."}}, {"@type": "Question", "name": "Can melatonin interact with medications?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Melatonin can interact with blood thinners (warfarin), diabetes medications, immunosuppressants, birth control pills, and some blood pressure medications. It may increase the sedative effect of benzodiazepines and other CNS depressants. Always tell your doctor about melatonin use, especially if you take prescription medications."}}, {"@type": "Question", "name": "What's better for sleep: melatonin or magnesium?", "acceptedAnswer": {"@type": "Answer", "text": "They work differently and can complement each other. Melatonin shifts circadian timing (best for falling asleep earlier). Magnesium promotes muscle relaxation and activates GABA receptors (best for physical relaxation and mild anxiety). For general sleep improvement, insomnia.md considers magnesium glycinate (200-400mg) a reasonable first try, with low-dose melatonin added if circadian timing is the issue."}}]}
       ]
     }
@@ -144,6 +144,11 @@
             .article-header h1 { font-size: 1.75rem; }
             .related-grid { grid-template-columns: 1fr; }
         }
+    
+        /* Medical Reviewer Badge */
+        .medical-reviewer { display: flex; align-items: center; gap: 0.4rem; margin-top: 0.75rem; padding: 0.5rem 0.75rem; background: #f0fdfa; border: 1px solid #ccfbf1; border-radius: 6px; font-size: 0.8rem; color: #0f766e; width: fit-content; }
+        .medical-reviewer svg { flex-shrink: 0; }
+        .medical-disclaimer { font-size: 0.75rem; color: var(--text-muted, #94a3b8); margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border, #e2e8f0); }
     </style>
 </head>
 <body>
@@ -200,6 +205,7 @@
     <footer class="site-footer">
         <div class="container-wide">
             <div class="footer-links">
+                <a href="/about.html">About &amp; Editorial Policy</a>
                 <a href="https://thrive.md">thrive.md</a>
                 <a href="https://anxiety.md">anxiety.md</a>
                 <a href="https://depression.md">depression.md</a>
